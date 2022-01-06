@@ -27,6 +27,11 @@ public class DeplSynchronisation extends DeplacementBalise {
 			this.synchro = sat;
 			target.send(new SynchroEvent(this));
 			this.synchro.send(new SynchroEvent(this));
+			sat.dataSize += target.dataSize;
+			
+			int newWidthJauge = (sat.dataSize() / sat.memorySize()) * 50;
+			
+			
 			target.resetData();
 		}
 	}
