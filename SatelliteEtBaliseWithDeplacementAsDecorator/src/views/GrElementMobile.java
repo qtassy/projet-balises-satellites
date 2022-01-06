@@ -49,7 +49,7 @@ public class GrElementMobile extends NiRectangle implements PositionChangeListen
 		this.dataBar.setValue(this.model.dataSize());
 		this.dataBar.setBounds(0, 0, 20, 200);
 		this.dataBar.setForeground(Color.GREEN);
-		this.setDimension(new Dimension(this.getWidth() + this.dataBar.getWidth() + 10, this.getHeight()));
+		this.setDimension(new Dimension(this.getWidth() + this.dataBar.getWidth(), this.getHeight()));
 		this.add(this.dataBar);
 		this.dataBar.setLocation(this.getWidth() - this.dataBar.getWidth(), 0);
 	}
