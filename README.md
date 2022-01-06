@@ -29,7 +29,7 @@ Le projet balises-satellites simule le fonctionnement de balises sous-marines co
 
 - Ajout d'un attribut dataBar à la classe GrElementMobile.
 
-- Ajout d'une méthode setUpDataBar permettant de mettre en place la barre de chargement des données à côté des balises et sattelites.
+- Ajout d'une méthode setUpDataBar dans la classe GrElementMobile permettant de mettre en place la barre de chargement des données à côté des balises et sattelites.
 
 - Appel de la méthode setUpDataBar dans la méthode setModel de la classe GrElementMobile.
 
