@@ -42,6 +42,8 @@ Une fois que la mémoire de la balise est pleine, celle-ci remonte à la surface
 
 Si tout les satellites ont leurs "memorysize" pleine alors les balises remontent à la surface et attendent un nouveau satellite vide. 
 
+![alt text](./screenshots/fullmemory.gif "img3")
+
 ### Améliorations possible :
 - L'implémentation d'un élément qui viendrais récupérer les balises
 - Un satellite plein transfert ses données vers une station marine
