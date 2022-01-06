@@ -19,5 +19,4 @@ public class DeplacementBalise extends Deplacement {
 	}
 
 	public void whenSatelitteMoved(SatelliteMoved arg, Balise target) { }
-
 }

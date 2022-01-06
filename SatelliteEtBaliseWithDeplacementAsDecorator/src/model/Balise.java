@@ -3,6 +3,7 @@ package model;
 import events.SatelitteMoveListener;
 import events.SatelliteMoved;
 
+
 public class Balise extends ElementMobile implements SatelitteMoveListener{
 	
 	// Précise si la balise collecte des données ou non
@@ -34,6 +35,10 @@ public class Balise extends ElementMobile implements SatelitteMoveListener{
 			this.collecte = false;
 		} 
 		super.tick();
+	}
+	
+	public void bouge () {
+		super.bouge();	
 	}
 
 	@Override

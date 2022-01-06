@@ -21,8 +21,11 @@ public class GrBalise extends GrElementMobile {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		this.add(new NiImage(rawImage));
+		
 		this.setDimension(new Dimension(rawImage.getWidth(), rawImage.getHeight()));
 	}
-
+	
+	
 }

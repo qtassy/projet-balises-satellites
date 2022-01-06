@@ -51,6 +51,4 @@ public class GrEther extends NiRectangle {
 		}
 		g2d.dispose();
 	}
-
-	
 }
