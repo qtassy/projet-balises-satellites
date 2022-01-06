@@ -1,19 +1,19 @@
 
 # Auteurs : Nedelec Romain // Stoliaroff Clément // Tassy Quentin
 
-# Projet Balise
+# Projet balises-satellites
 Le projet balises-satellites simule le fonctionnement de balises sous-marines collectant des données.
 
 ![alt text](./screnshots/satellites-balises.png "img1")
 
-### Modifications apportés :
-# Correction du bug : 
+# Modifications apportés :
+## Correction du bug : 
 
-**Erreur : **
+**Erreur :**
 
 - Une balise vidait ses "datasizes" avant même d'avoir effectué une synchronisation complète avec un satellite.
 
-**Résolution : **
+**Résolution :**
 
 - Mise en place d'un flag "collecte" désignant l'action de collecter des données. Si la collecte est en cours, alors le "datasize" s'incrémente.
 
@@ -23,13 +23,14 @@ Le projet balises-satellites simule le fonctionnement de balises sous-marines co
 
 ![alt text](./screnshots/satellites-balises.gif "img2")
 
-# Ajout de jauges de données (Satellites / Balises) :
-```java
-
-```
-
-# Transmission des données aux satellites :
+## Ajout de jauges de données (Satellites / Balises) :
 
 
-# Conclusion du projet
-Ce projet m'a appris pas mal de choses sur la programmation objet et comment l'optimiser au mieux. Je pense que pour améliorer mon projet je devrais rajouter des validations et vérifications lors de l'utilisation de certaines commandes.
+## Transmission des données aux satellites :
+Une fois que la mémoire de la balise est pleine, celle-ci remonte à la surface et se prépare à transmettre ses données. Lorsque la balise est à la surface, sa "datasize" est additionner à celle du satellite.
+
+Si tout les satellites ont leurs "memorysize" pleine alors les balises remontent à la surface et attendent un nouveau satellite vide. 
+
+### Améliorations possible :
+- L'implémentation d'un élément qui viendrais récupérer les balises
+- Un satellite plein transfert ses données vers une station marine
