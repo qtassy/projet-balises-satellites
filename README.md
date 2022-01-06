@@ -25,6 +25,7 @@ Le projet balises-satellites simule le fonctionnement de balises sous-marines co
 
 ## Ajout de jauges de données (Satellites / Balises) :
 
+en attente clément
 
 ## Transmission des données aux satellites :
 Une fois que la mémoire de la balise est pleine, celle-ci remonte à la surface et se prépare à transmettre ses données. Lorsque la balise est à la surface, sa "datasize" est additionner à celle du satellite.
