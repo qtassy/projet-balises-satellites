@@ -25,7 +25,17 @@ Le projet balises-satellites simule le fonctionnement de balises sous-marines co
 
 ## Ajout de jauges de données (Satellites / Balises) :
 
-en attente clément
+- Création d'un composant NiProgressBar représentant une barre de chargement.
+
+- Ajout d'un attribut dataBar à la classe GrElementMobile.
+
+- Ajout d'une méthode setUpDataBar permettant de mettre en place la barre de chargement des données à côté des balises et sattelites.
+
+- Appel de la méthode setUpDataBar dans la méthode setModel de la classe GrElementMobile.
+
+- Ajout d'une méthode updateDataBar dans la classe GrElementMobile, qui permet de faire charger la barre de chargement des données.
+
+- Appel de la méthode updateDataBar dans les méthodes whenStartSynchro, whenStopSynchro et whenPositionChanged de la classe GrElementMobile.
 
 ## Transmission des données aux satellites :
 Une fois que la mémoire de la balise est pleine, celle-ci remonte à la surface et se prépare à transmettre ses données. Lorsque la balise est à la surface, sa "datasize" est additionner à celle du satellite.
