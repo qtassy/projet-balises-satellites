@@ -4,7 +4,7 @@
 # Projet balises-satellites
 Le projet balises-satellites simule le fonctionnement de balises sous-marines collectant des données.
 
-![alt text](./screnshots/satellites-balises.png "img1")
+![alt text](./screenshots/satellites-balises.png "img1")
 
 # Modifications apportés :
 ## Correction du bug : 
@@ -21,7 +21,7 @@ Le projet balises-satellites simule le fonctionnement de balises sous-marines co
 
 - Une fois la synchronisation avec le satellite effectué, la balise se vide.
 
-![alt text](./screnshots/satellites-balises.gif "img2")
+![alt text](./screenshots/satellites-balises.gif "img2")
 
 ## Ajout de jauges de données (Satellites / Balises) :
 
