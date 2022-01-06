@@ -47,7 +47,7 @@ public class GrElementMobile extends NiRectangle implements PositionChangeListen
 		this.dataBar = new NiProgressBar(0, this.model.memorySize());
 		this.dataBar.setOrientation(NiProgressBar.VERTICAL);
 		this.dataBar.setValue(this.model.dataSize());
-		this.dataBar.setBounds(0, 0, 20, 200);
+		this.dataBar.setBounds(0, 0, 10, this.getHeight() - 10);
 		this.dataBar.setForeground(Color.GREEN);
 		this.setDimension(new Dimension(this.getWidth() + this.dataBar.getWidth() + 10, this.getHeight()));
 		this.add(this.dataBar);
