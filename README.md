@@ -82,7 +82,15 @@ Dans le but d'ajouter des éléments immobiles, tel qu'une station marine, le co
 
 ## Mise en place d'une station maritime
 
+Une Station maritime a été ajoutée.
 
+- Ajout d'une classe MaritimeStation.
+
+- Ajout d'une classe GrMaritimeStation.
+
+- Ajout d'une méthode addMaritimeStation dans la classe Simulation.
+
+- Appel de la méthode addMaritimeStation dans la méthode launch de la classe Simulation.
 
 ## Mise en forme du code :
 - Traduction du code écrit en français vers de l'anglais
@@ -90,4 +98,4 @@ Dans le but d'ajouter des éléments immobiles, tel qu'une station marine, le co
 
 ### Améliorations possible :
 - L'implémentation d'un élément qui viendrais récupérer les balises
-- Un satellite plein transfert ses données vers une station marine
+- Un satellite plein transfert ses données vers la station marine
