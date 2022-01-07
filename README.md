@@ -33,7 +33,7 @@ La balise ne va pas d'un point n°1 (x,y) au point n°2 (x,y) mais du P1.x vers 
 
 ## Ajout de jauges de données (Satellites / Balises) :
 
-- Création d'un composant NiProgressBar représentant une barre de chargement.
+- Création d'un composant NiProgressBar dans le package Nicellipse représentant une barre de chargement.
 
 - Ajout d'un attribut dataBar à la classe GrMovableElement.
 

@@ -1,7 +1,4 @@
-/simulation/
-<<<<<<< HEAD
-=======
-/model/
-/views/
->>>>>>> 3024e31ddaba6e41e826a319b2cd0ff45aa76488
 /events/
+/model/
+/simulation/
+/views/
