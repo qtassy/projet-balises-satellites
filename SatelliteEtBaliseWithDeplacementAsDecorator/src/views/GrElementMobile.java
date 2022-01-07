@@ -7,7 +7,7 @@ import java.awt.Graphics;
 
 import events.PositionChanged;
 import events.SynchroEvent;
-import model.ElementMobile;
+import model.MovableElement;
 import nicellipse.component.NiProgressBar;
 
 /**
@@ -15,7 +15,7 @@ import nicellipse.component.NiProgressBar;
  *
  */
 public class GrElementMobile extends GrModel  {
-	ElementMobile model;
+	MovableElement model;
 	GrEther ether;
 	Boolean duringSynchro = false;
 	NiProgressBar dataBar;
@@ -29,7 +29,7 @@ public class GrElementMobile extends GrModel  {
 
 	Object getModel() { return this.model; }
 	
-	public void setModel(ElementMobile model) {
+	public void setModel(MovableElement model) {
 		this.model = model;
 		model.registerListener(PositionChanged.class, this);
 		model.registerListener(SynchroEvent.class, this);

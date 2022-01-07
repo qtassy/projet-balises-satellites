@@ -2,20 +2,20 @@ package model;
 
 import java.awt.Point;
 
-public class DeplDiagonale extends DeplacementBalise {
+public class DiagonalMovement extends BeaconMovement {
 	Point start;
 	Point end;
 	Boolean fromP1ToP2 = true;
 	Boolean startPointX = false;
 
-	public DeplDiagonale(Point p1, Point p2) {
+	public DiagonalMovement(Point p1, Point p2) {
 		super (null);
 		this.start = p1;
 		this.end = p2;
 	}
 	
 	@Override
-	public void bouge(ElementMobile target) {
+	public void move(MovableElement target) {
 		
 		if(startPointX) {
 			Point p = target.getPosition();

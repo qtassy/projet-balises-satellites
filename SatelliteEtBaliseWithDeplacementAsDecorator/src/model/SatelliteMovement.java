@@ -2,22 +2,22 @@ package model;
 
 import java.awt.Point;
 
-public class DeplSatellite extends Deplacement {
+public class SatelliteMovement extends Movement {
 	Integer start;
 	Integer end;
-	int vitesse;
+	int speed;
 
-	public DeplSatellite(Integer start, Integer end, int vitesse) {
+	public SatelliteMovement(Integer start, Integer end, int speed) {
 		this.start = start;
 		this.end = end;
-		this.vitesse = vitesse;
+		this.speed = speed;
 	}
 	
 	@Override
-	public void bouge(ElementMobile target) {
+	public void move(MovableElement target) {
 		Point p = target.getPosition();
 		int x = p.x;
-		x += vitesse;
+		x += speed;
 		if (x > end) x = start;
 		target.setPosition(new Point(x, p.y));
 	}

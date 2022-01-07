@@ -4,13 +4,13 @@ import java.awt.Point;
 
 import events.PositionChanged;
 
-public abstract class ElementMobile extends Model {
-	Deplacement depl;
+public abstract class MovableElement extends Model {
+	Movement depl;
 	Point position;
 	int memorySize;
 	int dataSize;
 
-	public ElementMobile(int memorySize) {
+	public MovableElement(int memorySize) {
 		super();
 		this.memorySize = memorySize;
 		this.dataSize = 0;
@@ -25,7 +25,7 @@ public abstract class ElementMobile extends Model {
 		return this.memorySize;
 	}
 
-	public Deplacement deplacement() {
+	public Movement movements() {
 		return depl;
 	}
 	
@@ -39,11 +39,11 @@ public abstract class ElementMobile extends Model {
 
 	@Override
 	public void tick() {
-		this.bouge();
+		this.move();
 	}
 
-	public void bouge() {
-		this.depl.bouge(this);
+	public void move() {
+		this.depl.move(this);
 		super.send(new PositionChanged(this));
 	}
 
@@ -57,7 +57,7 @@ public abstract class ElementMobile extends Model {
 		return position;
 	}
 
-	public void setDeplacement(Deplacement depl) {
+	public void setDeplacement(Movement depl) {
 		this.depl = depl;
 	}
 }

@@ -3,7 +3,7 @@ package model;
 import events.SatelliteMoved;
 import events.SynchroEvent;
 
-public class DeplSynchronisation extends DeplacementBalise {
+public class SynchronizationMovement extends BeaconMovement {
 	private int synchroTime;
 	private Satellite synchro;
 	
@@ -11,14 +11,14 @@ public class DeplSynchronisation extends DeplacementBalise {
 		return this.synchro != null;
 	}
 	
-	public DeplSynchronisation(Deplacement next) {
+	public SynchronizationMovement(Movement next) {
 		super(next);
 		this.synchroTime = 10;
 		this.synchro = null;
 	}
 	
 	@Override
-	public void whenSatelitteMoved(SatelliteMoved arg, Balise target) {
+	public void whenSatelitteMoved(SatelliteMoved arg, Beacon target) {
 		if (this.synchro != null) return;
 		Satellite sat = (Satellite) arg.getSource();
 		int satX = sat.getPosition().x;
@@ -33,7 +33,7 @@ public class DeplSynchronisation extends DeplacementBalise {
 	}
 
 	@Override
-	public void bouge(Balise target) {
+	public void move(Beacon target) {
 		if (this.synchro == null) return;
 		this.synchroTime--;
 		if (synchroTime <= 0) {

@@ -7,7 +7,7 @@ import events.SatelliteMoved;
 public class Manager {
 	ArrayList<Model> models = new ArrayList<Model>();
 	
-	public void addBalise(Balise bal) {
+	public void addBalise(Beacon bal) {
 		this.models.add(bal);
 		bal.setManager(this);
 	}
@@ -25,14 +25,14 @@ public class Manager {
 		}
 	}
 	
-	public void baliseReadyForSynchro(Balise b) {
+	public void baliseReadyForSynchro(Beacon b) {
 		for (Model m : this.models) {
 			if(m instanceof Satellite) {
 				m.registerListener(SatelliteMoved.class, b);
 			}
 		}
 	}
-	public void baliseSynchroDone(Balise b) {
+	public void baliseSynchroDone(Beacon b) {
 		for (Model m : this.models) {
 			if(m instanceof Satellite) {
 				m.unregisterListener(SatelliteMoved.class, b);
