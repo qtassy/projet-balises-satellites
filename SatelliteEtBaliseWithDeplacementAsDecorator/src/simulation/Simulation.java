@@ -101,6 +101,12 @@ public class Simulation {
 		grSat.setModel(sat);
 		sky.add(grSat);
 	}
+	
+	public void addDataCenter(JPanel sky) {
+		//Datacenter datacenter = new Datacenter();
+		
+		//sky.add(niDataCenter);
+	}
 
 	public void launch() {
 		JLayeredPane main = new JLayeredPane();
@@ -111,6 +117,8 @@ public class Simulation {
 		this.ether.setBackground(Color.gray);
 		this.ether.setOpaque(false);
 		this.ether.setDimension(this.worldDim);
+		
+		
 
 		NiRectangle sky = new NiRectangle();
 		sky.setBackground(Color.white);
@@ -119,6 +127,10 @@ public class Simulation {
 		sea.setBackground(Color.blue);
 		sea.setDimension(new Dimension(this.worldDim.width, this.worldDim.height / 2));
 		sea.setLocation(new Point(0, this.worldDim.height / 2));
+		
+		
+		
+		
 
 		this.addSatelitte(sky, 100000, new Point(10, 50), 2);
 		this.addSatelitte(sky, 100000, new Point(100, 10), 1);
@@ -133,6 +145,7 @@ public class Simulation {
 		main.add(sky, JLayeredPane.DEFAULT_LAYER);
 		main.add(sea, JLayeredPane.DEFAULT_LAYER);
 		main.add(this.ether, JLayeredPane.POPUP_LAYER);
+		this.addDataCenter(sky);
 		
 		this.world.setLayout(new BoxLayout(this.world, BoxLayout.Y_AXIS));
 		this.world.add(main);
