@@ -7,17 +7,9 @@ import events.SatelliteMoved;
 public class Manager {
 	ArrayList<Model> models = new ArrayList<Model>();
 	
-	public void addBalise(Balise bal) {
-		this.models.add(bal);
-		bal.setManager(this);
-	}
-	public void addSatellite(Satellite sat) {
-		this.models.add(sat);
-		sat.setManager(this);
-	}
-	public void addDatacenter(Datacenter data) {
-		this.models.add(data);
-		data.setManager(this);
+	public void addModel(Model mod) {
+		this.models.add(mod);
+		mod.setManager(this);
 	}
 	public void tick() {
 		for (Model m : this.models) {

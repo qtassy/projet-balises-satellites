@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
+import events.PositionChangeListener;
 import events.PositionChanged;
 import events.SynchroEvent;
 import model.ElementMobile;
@@ -14,14 +15,16 @@ import nicellipse.component.NiProgressBar;
  * Représentation graphique d'un élément mobile
  *
  */
-public class GrElementMobile extends GrModel  {
+public abstract class GrElementMobile extends GrModel implements PositionChangeListener {
+	
+	private static final long serialVersionUID = -2300318070363309537L;
+	
 	ElementMobile model;
-	GrEther ether;
-	Boolean duringSynchro = false;
+	
 	NiProgressBar dataBar;
 	
 	public GrElementMobile(GrEther ether) {
-		this.ether = ether;
+		super.ether = ether;
 		this.setBorder(null);
 		this.setBackground(null);
 		this.setOpaque(false);
@@ -56,15 +59,15 @@ public class GrElementMobile extends GrModel  {
 	
 	@Override
 	public void whenStartSynchro(SynchroEvent arg) {
+		super.whenStartSynchro(arg);
 		this.updateDataBar();
-		duringSynchro = true;
 		this.ether.startSync(this);	
 	}
 
 	@Override
 	public void whenStopSynchro(SynchroEvent arg) {
+		super.whenStopSynchro(arg);
 		this.updateDataBar();
-		duringSynchro = false;
 		this.ether.stopSync(this);	
 	}
 

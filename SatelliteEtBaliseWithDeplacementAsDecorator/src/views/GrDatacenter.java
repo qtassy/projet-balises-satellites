@@ -8,13 +8,13 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import nicellipse.component.NiImage;
-import nicellipse.component.NiRectangle;
 
-public class GrDatacenter extends NiRectangle {
+public class GrDatacenter extends GrElementImmobile {
 
 	private static final long serialVersionUID = -7735833496959159110L;
 
 	public GrDatacenter(GrEther ether) {
+		super(ether);
 		File path = new File("datacenter.png");
 		BufferedImage datacenter = null;
 		try {

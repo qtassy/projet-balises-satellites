@@ -16,6 +16,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import model.Balise;
+import model.Datacenter;
 import model.DeplDiagonale;
 import model.DeplHorizontal;
 import model.DeplSatellite;
@@ -26,6 +27,7 @@ import model.Satellite;
 import nicellipse.component.NiRectangle;
 import nicellipse.component.NiSpace;
 import views.GrBalise;
+import views.GrDatacenter;
 import views.GrEther;
 import views.GrSatellite;
 
@@ -101,7 +103,7 @@ public class Simulation {
 		bal.setPosition(startPos);
 		bal.setDeplacement(depl);
 		
-		manager.addBalise(bal);
+		manager.addModel(bal);
 		
 		// vue
 		GrBalise grbal = new GrBalise(this.ether);
@@ -122,7 +124,7 @@ public class Simulation {
 		sat.setPosition(startPos);
 		sat.setDeplacement(new DeplSatellite(-10, 1000, vitesse));
 		
-		manager.addSatellite(sat);
+		manager.addModel(sat);
 		
 		// vue
 		GrSatellite grSat = new GrSatellite(this.ether);
@@ -131,9 +133,15 @@ public class Simulation {
 	}
 	
 	public void addDataCenter(JPanel sky) {
-		//Datacenter datacenter = new Datacenter();
+		// vue
+		GrDatacenter grDatacenter = new GrDatacenter(ether);
 		
-		//sky.add(niDataCenter);
+		Datacenter datacenter = new Datacenter(sky.getWidth() / 2 - grDatacenter.getWidth() / 2, sky.getHeight() - grDatacenter.getHeight());
+		
+		manager.addModel(datacenter);
+		grDatacenter.setModel(datacenter);
+		sky.add(grDatacenter);
+		
 	}
 
 	/**
