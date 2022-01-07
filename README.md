@@ -44,6 +44,28 @@ Si tout les satellites ont leurs "memorysize" pleine alors les balises remontent
 
 ![alt text](./screenshots/fullmemory.gif "img3")
 
+## Refactorisation du code :
+
+Dans le but d'ajouter des éléments immobiles, tel qu'une station marine,  le code a été refactorisé afin
+
+- Ajout d'une classe abstraite Model.
+
+- la classe ElementMobile est désormais abstraite.
+
+- Déplacement de plusieurs attributs et méthodes de la classe ElementMobile dans la classe Model.
+
+- La classe ElementMobile étends la classe Model.
+
+- Dans la classe Manager, les listes de balises et de satellites on été remplacées par une liste de Model.
+
+- Dans la classe Manager, remplacement des méthodes addBalise et addSatellite par une méthode addModel.
+
+- Dans la classe Manager, les méthodes baliseReadyForSynchro et baliseSynchroDone ont été adaptées pour parcourir la nouvelle liste de Model.
+
+- Création d'une classe abstraite GrModel.
+
+- 
+
 ### Améliorations possible :
 - L'implémentation d'un élément qui viendrais récupérer les balises
 - Un satellite plein transfert ses données vers une station marine
