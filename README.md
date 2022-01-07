@@ -84,6 +84,8 @@ Dans le but d'ajouter des éléments immobiles, tel qu'une station marine, le co
 
 Une Station maritime a été ajoutée.
 
+- Ajout d'une image représentant la station maritime.
+
 - Ajout d'une classe MaritimeStation.
 
 - Ajout d'une classe GrMaritimeStation.
@@ -91,6 +93,8 @@ Une Station maritime a été ajoutée.
 - Ajout d'une méthode addMaritimeStation dans la classe Simulation.
 
 - Appel de la méthode addMaritimeStation dans la méthode launch de la classe Simulation.
+
+![alt text](./screenshots/stationMaritime.png  "img5")
 
 ## Mise en forme du code :
 - Traduction du code écrit en français vers de l'anglais
