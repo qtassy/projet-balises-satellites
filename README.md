@@ -35,15 +35,15 @@ La balise ne va pas d'un point n°1 (x,y) au point n°2 (x,y) mais du P1.x vers 
 
 - Création d'un composant NiProgressBar représentant une barre de chargement.
 
-- Ajout d'un attribut dataBar à la classe GrElementMobile.
+- Ajout d'un attribut dataBar à la classe GrMovableElement.
 
-- Ajout d'une méthode setUpDataBar dans la classe GrElementMobile permettant de mettre en place la barre de chargement des données à côté des balises et sattelites.
+- Ajout d'une méthode setUpDataBar dans la classe GrMovableElement permettant de mettre en place la barre de chargement des données à côté des balises et sattelites.
 
-- Appel de la méthode setUpDataBar dans la méthode setModel de la classe GrElementMobile.
+- Appel de la méthode setUpDataBar dans la méthode setModel de la classe GrMovableElement.
 
-- Ajout d'une méthode updateDataBar dans la classe GrElementMobile, qui permet de faire charger la barre de chargement des données.
+- Ajout d'une méthode updateDataBar dans la classe GrMovableElement, qui permet de faire charger la barre de chargement des données.
 
-- Appel de la méthode updateDataBar dans les méthodes whenStartSynchro, whenStopSynchro et whenPositionChanged de la classe GrElementMobile.
+- Appel de la méthode updateDataBar dans les méthodes whenStartSynchro, whenStopSynchro et whenPositionChanged de la classe GrMovableElement.
 
 ## Transmission des données aux satellites :
 Une fois que la mémoire de la balise est pleine, celle-ci remonte à la surface et se prépare à transmettre ses données. Lorsque la balise est à la surface, sa "datasize" est additionner à celle du satellite.
@@ -54,15 +54,15 @@ Si tout les satellites ont leurs "memorysize" pleine alors les balises remontent
 
 ## Refactorisation du code :
 
-Dans le but d'ajouter des éléments immobiles, tel qu'une station marine,  le code a été refactorisé afin
+Dans le but d'ajouter des éléments immobiles, tel qu'une station marine, le code a été refactorisé.
 
 - Ajout d'une classe abstraite Model.
 
-- la classe ElementMobile est désormais abstraite.
+- la classe MovableElement est désormais abstraite.
 
-- Déplacement de plusieurs attributs et méthodes de la classe ElementMobile dans la classe Model.
+- Déplacement de plusieurs attributs et méthodes de la classe MovableElement dans la classe Model.
 
-- La classe ElementMobile étends la classe Model.
+- La classe MovableElement étends la classe Model.
 
 - Dans la classe Manager, les listes de balises et de satellites on été remplacées par une liste de Model.
 
@@ -70,7 +70,19 @@ Dans le but d'ajouter des éléments immobiles, tel qu'une station marine,  le c
 
 - Dans la classe Manager, les méthodes baliseReadyForSynchro et baliseSynchroDone ont été adaptées pour parcourir la nouvelle liste de Model.
 
+- Création d'une classe abstraite UnmovableElement.
+
 - Création d'une classe abstraite GrModel.
+
+- La classe GrMovableElement désormais abstraite et étend la classe GrMovableElement.
+
+- Déplacement d'attributs et de méthodes de la classe GrMovableElement dans la classe GrModel.
+
+- Création d'une classe abstraite GrUnmovableElement.
+
+## Mise en place d'une station maritime
+
+
 
 ## Mise en forme du code :
 - Traduction du code écrit en français vers de l'anglais
