@@ -23,6 +23,12 @@ Le projet balises-satellites simule le fonctionnement de balises sous-marines co
 
 ![alt text](./screenshots/satellites-balises.gif "img2")
 
+## Ajout du déplacement en diagonale :
+Ajout d'un déplacement en diagonale entre deux point défini.
+
+**Erreur :**
+La balise ne va pas d'un point n°1 (x,y) au point n°2 (x,y) mais du P1.x vers le P2.x en descendant / montant en diagonale, ce fonctionnement implique que la balise ne se rends pas précisement au point demandé.
+
 ## Ajout de jauges de données (Satellites / Balises) :
 
 - Création d'un composant NiProgressBar représentant une barre de chargement.
