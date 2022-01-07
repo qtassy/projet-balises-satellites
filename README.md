@@ -73,8 +73,8 @@ Dans le but d'ajouter des éléments immobiles, tel qu'une station marine,  le c
 - Création d'une classe abstraite GrModel.
 
 ## Mise en forme du code :
--Traduction du code écrit en français vers de l'anglais
--Documentation de classe Simulation, les classes de la vue, les events... (javadoc)
+- Traduction du code écrit en français vers de l'anglais
+- Documentation de classe Simulation, les classes de la vue, les events... (javadoc)
 
 ### Améliorations possible :
 - L'implémentation d'un élément qui viendrais récupérer les balises
