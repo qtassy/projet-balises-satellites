@@ -2,6 +2,9 @@ package events;
 
 import eventHandler.AbstractEvent;
 
+/**
+ * Evenement pour indiquer le deplacement d'un satellite 
+ */
 public class SatelliteMoved extends AbstractEvent {
 	private static final long serialVersionUID = 480096146703824993L;
 

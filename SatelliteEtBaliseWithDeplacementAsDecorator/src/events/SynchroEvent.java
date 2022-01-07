@@ -3,6 +3,10 @@ package events;
 import eventHandler.AbstractEvent;
 import model.DeplSynchronisation;
 
+/**
+ * Evenement pour indiquer une synchronisation entre un satellite et une balise
+ *
+ */
 public class SynchroEvent extends AbstractEvent {
 	private static final long serialVersionUID = 480096146703824993L;
 

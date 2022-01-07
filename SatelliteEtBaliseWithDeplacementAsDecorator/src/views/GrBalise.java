@@ -9,6 +9,10 @@ import javax.imageio.ImageIO;
 
 import nicellipse.component.NiImage;
 
+/**
+ * Représentation graphique d'une balise
+ *
+ */
 public class GrBalise extends GrElementMobile {
 	private static final long serialVersionUID = -8672390241177685075L;
 

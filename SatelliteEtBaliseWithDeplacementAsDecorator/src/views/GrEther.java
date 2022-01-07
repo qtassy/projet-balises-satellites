@@ -11,6 +11,10 @@ import java.util.List;
 
 import nicellipse.component.NiRectangle;
 
+/** 
+ * Représentation graphique des etats de synchronisation entre satellites et balises
+ *
+ */
 public class GrEther extends NiRectangle {
 	private static final long serialVersionUID = -7500849956681054391L;
 

@@ -2,6 +2,10 @@ package events;
 
 import eventHandler.AbstractEvent;
 
+/**
+ * Evenement pour indiquer un deplacement
+ *
+ */
 public class PositionChanged extends AbstractEvent {
 	private static final long serialVersionUID = 480096146703824993L;
 

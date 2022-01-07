@@ -13,6 +13,10 @@ import model.ElementMobile;
 import nicellipse.component.NiProgressBar;
 import nicellipse.component.NiRectangle;
 
+/**
+ * Représentation graphique d'un élément mobile
+ *
+ */
 public class GrElementMobile extends NiRectangle implements PositionChangeListener, SynchroEventListener  {
 	private static final long serialVersionUID = -5422724191168577346L;
 	ElementMobile model;
