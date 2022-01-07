@@ -18,22 +18,22 @@ import nicellipse.component.NiRectangle;
 public class GrEther extends NiRectangle {
 	private static final long serialVersionUID = -7500849956681054391L;
 
-	List<GrElementMobile> q;
+	List<GrMovableElement> q;
 	
 	public GrEther() {
 		q = new ArrayList<>();
 	}
 	
-	public void startSync(GrElementMobile elem) {
+	public void startSync(GrMovableElement elem) {
 		q.add(elem);
 		this.repaint();
 	}
-	public void stopSync(GrElementMobile elem) {
+	public void stopSync(GrMovableElement elem) {
 		q.remove(elem);
 		this.repaint();
 	}
 	
-	public void paintSynchronisation(Graphics2D g, GrElementMobile e) {
+	public void paintSynchronisation(Graphics2D g, GrMovableElement e) {
 		Rectangle bounds = e.getBounds();
 		Point l = e.getParent().getLocation();
 		l.x += e.getLocation().x;
@@ -50,7 +50,7 @@ public class GrEther extends NiRectangle {
 		if (q.isEmpty()) return;
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g.create();
-		for (GrElementMobile sync : this.q) {
+		for (GrMovableElement sync : this.q) {
 			this.paintSynchronisation(g2d, sync);
 		}
 		g2d.dispose();

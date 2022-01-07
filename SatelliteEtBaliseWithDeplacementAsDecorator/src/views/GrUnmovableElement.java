@@ -1,15 +1,15 @@
 package views;
 
 import events.SynchroEvent;
-import model.ElementImmobile;
+import model.UnmovableElement;
 
-public abstract class GrElementImmobile extends GrModel {
+public abstract class GrUnmovableElement extends GrModel {
 
 	private static final long serialVersionUID = 7032873724568151943L;
 	
-	ElementImmobile model;
+	UnmovableElement model;
 	
-	public GrElementImmobile(GrEther ether) {
+	public GrUnmovableElement(GrEther ether) {
 		super.ether = ether;
 		this.setBorder(null);
 		this.setBackground(null);
@@ -26,11 +26,11 @@ public abstract class GrElementImmobile extends GrModel {
 		super.whenStopSynchro(arg);
 	}
 
-	public ElementImmobile getModel() {
+	public UnmovableElement getModel() {
 		return model;
 	}
 
-	public void setModel(ElementImmobile model) {
+	public void setModel(UnmovableElement model) {
 		this.model = model;
 		this.setLocation(this.model.getPosition());
 	}

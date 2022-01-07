@@ -13,10 +13,10 @@ import nicellipse.component.NiImage;
  * Représentation graphique d'une balise
  *
  */
-public class GrBalise extends GrElementMobile {
+public class GrBeacon extends GrMovableElement {
 	private static final long serialVersionUID = -8672390241177685075L;
 
-	public GrBalise(GrEther ether) {
+	public GrBeacon(GrEther ether) {
 		super(ether);
 		File path = new File("balise.png");
 		BufferedImage rawImage = null;

@@ -2,7 +2,7 @@ package model;
 
 import java.awt.Point;
 
-public class Datacenter extends ElementImmobile {
+public class Datacenter extends UnmovableElement {
 	public Datacenter(int x, int y) {
 		super.position = new Point(x, y);
 	}

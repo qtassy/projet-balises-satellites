@@ -16,7 +16,7 @@ import nicellipse.component.NiProgressBar;
  *
  */
 
-public abstract class GrElementMobile extends GrModel implements PositionChangeListener {
+public abstract class GrMovableElement extends GrModel implements PositionChangeListener {
 	
 	private static final long serialVersionUID = -2300318070363309537L;
 	
@@ -25,7 +25,7 @@ public abstract class GrElementMobile extends GrModel implements PositionChangeL
 
 	NiProgressBar dataBar;
 	
-	public GrElementMobile(GrEther ether) {
+	public GrMovableElement(GrEther ether) {
 		super.ether = ether;
 		this.setBorder(null);
 		this.setBackground(null);

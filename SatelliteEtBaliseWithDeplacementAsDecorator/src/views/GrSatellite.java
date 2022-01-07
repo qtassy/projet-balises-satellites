@@ -13,7 +13,7 @@ import nicellipse.component.NiImage;
  * Représentation graphique d'un satellite
  *
  */
-public class GrSatellite extends GrElementMobile {
+public class GrSatellite extends GrMovableElement {
 	private static final long serialVersionUID = -8534493300853878234L;
 
 	public GrSatellite(GrEther ether) {

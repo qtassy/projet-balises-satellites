@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 
 import nicellipse.component.NiImage;
 
-public class GrDatacenter extends GrElementImmobile {
+public class GrDatacenter extends GrUnmovableElement {
 
 	private static final long serialVersionUID = -7735833496959159110L;
 

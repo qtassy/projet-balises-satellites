@@ -27,7 +27,7 @@ import model.Manager;
 import model.Satellite;
 import nicellipse.component.NiRectangle;
 import nicellipse.component.NiSpace;
-import views.GrBalise;
+import views.GrBeacon;
 import views.GrDatacenter;
 import views.GrEther;
 import views.GrSatellite;
@@ -107,7 +107,7 @@ public class Simulation {
 		manager.addModel(bal);
 		
 		// vue
-		GrBalise grbal = new GrBalise(this.ether);
+		GrBeacon grbal = new GrBeacon(this.ether);
 		grbal.setModel(bal);
 		sea.add(grbal);
 	}
@@ -142,7 +142,6 @@ public class Simulation {
 		manager.addModel(datacenter);
 		grDatacenter.setModel(datacenter);
 		sky.add(grDatacenter);
-		
 	}
 
 	/**
@@ -157,8 +156,6 @@ public class Simulation {
 		this.ether.setBackground(Color.gray);
 		this.ether.setOpaque(false);
 		this.ether.setDimension(this.worldDim);
-		
-		
 
 		NiRectangle sky = new NiRectangle();
 		sky.setBackground(Color.white);
@@ -168,10 +165,6 @@ public class Simulation {
 		sea.setBackground(Color.blue);
 		sea.setDimension(new Dimension(this.worldDim.width, this.worldDim.height / 2));
 		sea.setLocation(new Point(0, this.worldDim.height / 2));
-		
-		
-		
-		
 
 		this.addSatelitte(sky, 2000, new Point(10, 50), 2);
 		this.addSatelitte(sky, 2000, new Point(100, 10), 1);

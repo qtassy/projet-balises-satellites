@@ -2,7 +2,7 @@ package model;
 
 import java.awt.Point;
 
-public abstract class ElementImmobile extends Model {
+public abstract class UnmovableElement extends Model {
 	Point position;
 	
 	@Override
