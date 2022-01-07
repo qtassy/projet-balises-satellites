@@ -33,6 +33,7 @@ public class Simulation {
 	final int FPS_MAX = 500;
 	final int FPS_INIT = 10;
 	final int startDelay = 500 / FPS_INIT;
+	
 	Timer animation;
 	Manager manager = new Manager();
 	Dimension worldDim = new Dimension(900, 700);
@@ -46,11 +47,16 @@ public class Simulation {
 				ether.repaint();		
 			}
 		};
+		
 		this.animation = new Timer(this.startDelay, taskPerformer);
 		this.animation.setRepeats(true);
 		this.animation.start();
 	}
 	
+	/**
+	 * Slider qui permet à l'utilisateur de définir le nombre FPS de la simulation
+	 * @return JPanel slider
+	 */
 	private JPanel fpsSliderPanel() {		
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
@@ -81,27 +87,51 @@ public class Simulation {
 		return panel;
 	}
 
-
+	/**
+	 * Ajouter une balise
+	 * @param sea JPanel qui represente la mer
+	 * @param memorySize Espace de stockage de la balise
+	 * @param startPos Position de départ de la balise
+	 * @param depl Méthode de déplacement de la balise
+	 */
 	public void addBalise(JPanel sea, int memorySize, Point startPos, Deplacement depl) {
+		// model
 		Balise bal = new Balise(memorySize);
 		bal.setPosition(startPos);
 		bal.setDeplacement(depl);
+		
 		manager.addBalise(bal);
+		
+		// vue
 		GrBalise grbal = new GrBalise(this.ether);
 		grbal.setModel(bal);
 		sea.add(grbal);
 	}
 
+	/**
+	 * Ajouter un satellite
+	 * @param sea JPanel qui represente le ciel
+	 * @param memorySize Espace de stockage du satellite
+	 * @param startPos Position de départ du satellite
+	 * @param depl Méthode de déplacement du satellite
+	 */
 	public void addSatelitte(JPanel sky, int memorySize, Point startPos, int vitesse) {
+		// model
 		Satellite sat = new Satellite(memorySize);
 		sat.setPosition(startPos);
 		sat.setDeplacement(new DeplSatellite(-10, 1000, vitesse));
+		
 		manager.addSatellite(sat);
+		
+		// vue
 		GrSatellite grSat = new GrSatellite(this.ether);
 		grSat.setModel(sat);
 		sky.add(grSat);
 	}
 
+	/**
+	 * Lancer la simulation
+	 */
 	public void launch() {
 		JLayeredPane main = new JLayeredPane();
 		main.setOpaque(true);
@@ -115,6 +145,7 @@ public class Simulation {
 		NiRectangle sky = new NiRectangle();
 		sky.setBackground(Color.white);
 		sky.setDimension(new Dimension(this.worldDim.width, this.worldDim.height / 2));
+		
 		NiRectangle sea = new NiRectangle();
 		sea.setBackground(Color.blue);
 		sea.setDimension(new Dimension(this.worldDim.width, this.worldDim.height / 2));
@@ -125,11 +156,13 @@ public class Simulation {
 		this.addSatelitte(sky, 100000, new Point(400, 90), 3);
 		this.addSatelitte(sky, 100000, new Point(500, 140), 4);
 		this.addSatelitte(sky, 100000, new Point(600, 10), 1);
+		
 		this.addBalise(sea, 300, new Point(400, 200), new DeplHorizontal(50, 750));
 		this.addBalise(sea, 400, new Point(100, 100), new DeplVertical(50, 200));
 		this.addBalise(sea, 200, new Point(0, 160), new DeplHorizontal(0, 800));
 		this.addBalise(sea, 500, new Point(200, 100), new DeplVertical(130, 270));
 		this.addBalise(sea, 150, new Point(300, 100), new DeplHorizontal(200, 600));
+		
 		main.add(sky, JLayeredPane.DEFAULT_LAYER);
 		main.add(sea, JLayeredPane.DEFAULT_LAYER);
 		main.add(this.ether, JLayeredPane.POPUP_LAYER);
@@ -138,6 +171,7 @@ public class Simulation {
 		this.world.add(main);
 		this.world.add(this.fpsSliderPanel());
 		this.world.openInWindow();
+		
 		this.animation();
 	}
 
