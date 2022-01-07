@@ -133,7 +133,7 @@ public class Simulation {
 		sky.add(grSat);
 	}
 	
-	public void addDataCenter(JPanel sky) {
+	public void addMaritimeStation(JPanel sky) {
 		// vue
 		GrMaritimeStation grDatacenter = new GrMaritimeStation(ether);
 		
@@ -182,7 +182,7 @@ public class Simulation {
 		main.add(sky, JLayeredPane.DEFAULT_LAYER);
 		main.add(sea, JLayeredPane.DEFAULT_LAYER);
 		main.add(this.ether, JLayeredPane.POPUP_LAYER);
-		this.addDataCenter(sky);
+		this.addMaritimeStation(sky);
 		
 		this.world.setLayout(new BoxLayout(this.world, BoxLayout.Y_AXIS));
 		this.world.add(main);
