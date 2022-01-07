@@ -26,6 +26,8 @@ Le projet balises-satellites simule le fonctionnement de balises sous-marines co
 ## Ajout du déplacement en diagonale :
 Ajout d'un déplacement en diagonale entre deux point défini.
 
+![alt text](./screenshots/Diagonale.png "img3")
+
 **Erreur :**
 La balise ne va pas d'un point n°1 (x,y) au point n°2 (x,y) mais du P1.x vers le P2.x en descendant / montant en diagonale, ce fonctionnement implique que la balise ne se rends pas précisement au point demandé.
 
@@ -48,7 +50,7 @@ Une fois que la mémoire de la balise est pleine, celle-ci remonte à la surface
 
 Si tout les satellites ont leurs "memorysize" pleine alors les balises remontent à la surface et attendent un nouveau satellite vide. 
 
-![alt text](./screenshots/fullmemory.gif "img3")
+![alt text](./screenshots/fullmemory.gif "img4")
 
 ## Refactorisation du code :
 
