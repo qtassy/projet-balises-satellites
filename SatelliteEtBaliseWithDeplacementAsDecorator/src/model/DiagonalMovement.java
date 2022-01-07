@@ -25,11 +25,11 @@ public class DiagonalMovement extends BeaconMovement {
 			if (fromP1ToP2) {
 				x += 5;
 				y += 5;
-				if (x > end.x && y > end.y) fromP1ToP2 = false; System.out.println("Descend { x : " + x + " | y : " + y + "} --> { x : " + end.x + " | y : " + end.y + "}");
+				if (x > end.x && y > end.y) fromP1ToP2 = false;
 			} else {
 				x -= 5;
 				y -= 5;
-				if (y < start.y && x < start.x) fromP1ToP2 = true; System.out.println("Monte { x : " + x + " | y : " + y + "} --> { x : " + start.x + " | y : " + start.y + "}");
+				if (y < start.y && x < start.x) fromP1ToP2 = true;
 			}
 			target.setPosition(new Point(x, y));
 		}
