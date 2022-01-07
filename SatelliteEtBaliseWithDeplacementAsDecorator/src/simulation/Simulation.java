@@ -15,13 +15,14 @@ import javax.swing.Timer;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import model.Balise;
+
+import model.Beacon;
 import model.Datacenter;
-import model.DeplDiagonale;
-import model.DeplHorizontal;
-import model.DeplSatellite;
-import model.DeplVertical;
-import model.Deplacement;
+import model.DiagonalMovement;
+import model.HorizontalMovement;
+import model.SatelliteMovement;
+import model.VerticalMovement;
+import model.Movement;
 import model.Manager;
 import model.Satellite;
 import nicellipse.component.NiRectangle;
@@ -97,9 +98,9 @@ public class Simulation {
 	 * @param startPos Position de départ de la balise
 	 * @param depl Méthode de déplacement de la balise
 	 */
-	public void addBalise(JPanel sea, int memorySize, Point startPos, Deplacement depl) {
+	public void addBalise(JPanel sea, int memorySize, Point startPos, Movement depl) {
 		// model
-		Balise bal = new Balise(memorySize);
+		Beacon bal = new Beacon(memorySize);
 		bal.setPosition(startPos);
 		bal.setDeplacement(depl);
 		
@@ -122,7 +123,7 @@ public class Simulation {
 		// model
 		Satellite sat = new Satellite(memorySize);
 		sat.setPosition(startPos);
-		sat.setDeplacement(new DeplSatellite(-10, 1000, vitesse));
+		sat.setDeplacement(new SatelliteMovement(-10, 1000, vitesse));
 		
 		manager.addModel(sat);
 		
@@ -178,13 +179,13 @@ public class Simulation {
 		this.addSatelitte(sky, 2000, new Point(500, 140), 4);
 		this.addSatelitte(sky, 2000, new Point(600, 10), 1);
 		
-		this.addBalise(sea, 300, new Point(400, 200), new DeplHorizontal(50, 750));
-		this.addBalise(sea, 400, new Point(100, 100), new DeplVertical(50, 200));
-		this.addBalise(sea, 200, new Point(0, 160), new DeplHorizontal(0, 800));
-		this.addBalise(sea, 500, new Point(200, 100), new DeplVertical(130, 270));
-		this.addBalise(sea, 150, new Point(300, 100), new DeplHorizontal(200, 600));
+		this.addBalise(sea, 300, new Point(400, 200), new HorizontalMovement(50, 750));
+		this.addBalise(sea, 400, new Point(100, 100), new VerticalMovement(50, 200));
+		this.addBalise(sea, 200, new Point(0, 160), new HorizontalMovement(0, 800));
+		this.addBalise(sea, 500, new Point(200, 100), new VerticalMovement(130, 270));
+		this.addBalise(sea, 150, new Point(300, 100), new HorizontalMovement(200, 600));
 		
-		this.addBalise(sea, 150, new Point(400, 0), new DeplDiagonale(new Point(150,250), new Point(100,200)));
+		this.addBalise(sea, 150, new Point(400, 0), new DiagonalMovement(new Point(150,250), new Point(100,200)));
 		main.add(sky, JLayeredPane.DEFAULT_LAYER);
 		main.add(sea, JLayeredPane.DEFAULT_LAYER);
 		main.add(this.ether, JLayeredPane.POPUP_LAYER);

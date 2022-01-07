@@ -8,19 +8,21 @@ import java.awt.Graphics;
 import events.PositionChangeListener;
 import events.PositionChanged;
 import events.SynchroEvent;
-import model.ElementMobile;
+import model.MovableElement;
 import nicellipse.component.NiProgressBar;
 
 /**
  * Représentation graphique d'un élément mobile
  *
  */
+
 public abstract class GrElementMobile extends GrModel implements PositionChangeListener {
 	
 	private static final long serialVersionUID = -2300318070363309537L;
 	
-	ElementMobile model;
+	MovableElement model;
 	
+
 	NiProgressBar dataBar;
 	
 	public GrElementMobile(GrEther ether) {
@@ -32,7 +34,7 @@ public abstract class GrElementMobile extends GrModel implements PositionChangeL
 
 	Object getModel() { return this.model; }
 	
-	public void setModel(ElementMobile model) {
+	public void setModel(MovableElement model) {
 		this.model = model;
 		model.registerListener(PositionChanged.class, this);
 		model.registerListener(SynchroEvent.class, this);

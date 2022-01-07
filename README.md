@@ -23,6 +23,14 @@ Le projet balises-satellites simule le fonctionnement de balises sous-marines co
 
 ![alt text](./screenshots/satellites-balises.gif "img2")
 
+## Ajout du déplacement en diagonale :
+Ajout d'un déplacement en diagonale entre deux point défini.
+
+![alt text](./screenshots/Diagonale.png "img3")
+
+**Erreur :**
+La balise ne va pas d'un point n°1 (x,y) au point n°2 (x,y) mais du P1.x vers le P2.x en descendant / montant en diagonale, ce fonctionnement implique que la balise ne se rends pas précisement au point demandé.
+
 ## Ajout de jauges de données (Satellites / Balises) :
 
 - Création d'un composant NiProgressBar représentant une barre de chargement.
@@ -42,7 +50,31 @@ Une fois que la mémoire de la balise est pleine, celle-ci remonte à la surface
 
 Si tout les satellites ont leurs "memorysize" pleine alors les balises remontent à la surface et attendent un nouveau satellite vide. 
 
-![alt text](./screenshots/fullmemory.gif "img3")
+![alt text](./screenshots/fullmemory.gif "img4")
+
+## Refactorisation du code :
+
+Dans le but d'ajouter des éléments immobiles, tel qu'une station marine,  le code a été refactorisé afin
+
+- Ajout d'une classe abstraite Model.
+
+- la classe ElementMobile est désormais abstraite.
+
+- Déplacement de plusieurs attributs et méthodes de la classe ElementMobile dans la classe Model.
+
+- La classe ElementMobile étends la classe Model.
+
+- Dans la classe Manager, les listes de balises et de satellites on été remplacées par une liste de Model.
+
+- Dans la classe Manager, remplacement des méthodes addBalise et addSatellite par une méthode addModel.
+
+- Dans la classe Manager, les méthodes baliseReadyForSynchro et baliseSynchroDone ont été adaptées pour parcourir la nouvelle liste de Model.
+
+- Création d'une classe abstraite GrModel.
+
+## Mise en forme du code :
+- Traduction du code écrit en français vers de l'anglais
+- Documentation de classe Simulation, les classes de la vue, les events... (javadoc)
 
 ### Améliorations possible :
 - L'implémentation d'un élément qui viendrais récupérer les balises

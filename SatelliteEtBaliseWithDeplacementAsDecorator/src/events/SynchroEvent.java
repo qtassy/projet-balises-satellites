@@ -1,7 +1,7 @@
 package events;
 
 import eventHandler.AbstractEvent;
-import model.DeplSynchronisation;
+import model.SynchronizationMovement;
 
 /**
  * Evenement pour indiquer une synchronisation entre un satellite et une balise
@@ -16,7 +16,7 @@ public class SynchroEvent extends AbstractEvent {
 
 	public void runOn(Object target) {
 		SynchroEventListener listener = (SynchroEventListener) target;
-		DeplSynchronisation depl = (DeplSynchronisation) this.getSource();
+		SynchronizationMovement depl = (SynchronizationMovement) this.getSource();
 		if (depl.synchroStarted())
 			listener.whenStartSynchro(this);
 		else 
