@@ -5,34 +5,38 @@ import java.util.ArrayList;
 import events.SatelliteMoved;
 
 public class Manager {
-	ArrayList<Satellite> sats = new ArrayList<Satellite>();
-	ArrayList<Balise> bals = new ArrayList<Balise>();
+	ArrayList<Model> models = new ArrayList<Model>();
 	
 	public void addBalise(Balise bal) {
-		bals.add(bal);
+		this.models.add(bal);
 		bal.setManager(this);
 	}
 	public void addSatellite(Satellite sat) {
-		this.sats.add(sat);
+		this.models.add(sat);
 		sat.setManager(this);
 	}
+	public void addDatacenter(Datacenter data) {
+		this.models.add(data);
+		data.setManager(this);
+	}
 	public void tick() {
-		for (Balise b : this.bals) {
-			b.tick();
-		}
-		for (Satellite s : this.sats) {
-			s.tick();
+		for (Model m : this.models) {
+			m.tick();
 		}
 	}
 	
 	public void baliseReadyForSynchro(Balise b) {
-		for (Satellite s : this.sats) {			
-			s.registerListener(SatelliteMoved.class, b);
+		for (Model m : this.models) {
+			if(m instanceof Satellite) {
+				m.registerListener(SatelliteMoved.class, b);
+			}
 		}
 	}
 	public void baliseSynchroDone(Balise b) {
-		for (Satellite s : this.sats) {			
-			s.unregisterListener(SatelliteMoved.class, b);
+		for (Model m : this.models) {
+			if(m instanceof Satellite) {
+				m.unregisterListener(SatelliteMoved.class, b);
+			}
 		}
 	}
 

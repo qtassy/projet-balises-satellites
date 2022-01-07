@@ -5,20 +5,16 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
-import events.PositionChangeListener;
 import events.PositionChanged;
 import events.SynchroEvent;
-import events.SynchroEventListener;
 import model.ElementMobile;
 import nicellipse.component.NiProgressBar;
-import nicellipse.component.NiRectangle;
 
 /**
  * Représentation graphique d'un élément mobile
  *
  */
-public class GrElementMobile extends NiRectangle implements PositionChangeListener, SynchroEventListener  {
-	private static final long serialVersionUID = -5422724191168577346L;
+public class GrElementMobile extends GrModel  {
 	ElementMobile model;
 	GrEther ether;
 	Boolean duringSynchro = false;
