@@ -17,19 +17,19 @@ import javax.swing.event.ChangeListener;
 
 
 import model.Beacon;
-import model.Datacenter;
 import model.DiagonalMovement;
 import model.HorizontalMovement;
 import model.SatelliteMovement;
 import model.VerticalMovement;
 import model.Movement;
 import model.Manager;
+import model.MaritimeStation;
 import model.Satellite;
 import nicellipse.component.NiRectangle;
 import nicellipse.component.NiSpace;
 import views.GrBeacon;
-import views.GrDatacenter;
 import views.GrEther;
+import views.GrMaritimeStation;
 import views.GrSatellite;
 
 public class Simulation {
@@ -135,9 +135,9 @@ public class Simulation {
 	
 	public void addDataCenter(JPanel sky) {
 		// vue
-		GrDatacenter grDatacenter = new GrDatacenter(ether);
+		GrMaritimeStation grDatacenter = new GrMaritimeStation(ether);
 		
-		Datacenter datacenter = new Datacenter(sky.getWidth() / 2 - grDatacenter.getWidth() / 2, sky.getHeight() - grDatacenter.getHeight());
+		MaritimeStation datacenter = new MaritimeStation(sky.getWidth() / 2 - grDatacenter.getWidth() / 2, sky.getHeight() - grDatacenter.getHeight());
 		
 		manager.addModel(datacenter);
 		grDatacenter.setModel(datacenter);

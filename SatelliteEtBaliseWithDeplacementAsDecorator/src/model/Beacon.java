@@ -38,7 +38,7 @@ public class Beacon extends MovableElement implements SatelitteMoveListener{
 	}
 	
 	public void move () {
-		super.move();	
+		super.move();
 	}
 
 	@Override
